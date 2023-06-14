@@ -21,20 +21,22 @@
       <ion-label>
         <h2>Hair dryer</h2>
       </ion-label>
-      
-      <ion-icon name="volume-high-outline"></ion-icon>
+      <ion-icon *ngIf="item[0]==1" name="volume-high" (click)=changeItemValue(0)></ion-icon>
+      <ion-icon *ngIf="item[0]==0" name="volume-high-outline" (click)=changeItemValue(0)></ion-icon>
     </ion-item>
     <ion-item color="secondary">
       <ion-label>
         <h2>Exhaust fans and cooker hoods</h2>
       </ion-label>
-      <ion-icon name="volume-high-outline"></ion-icon>
+      <ion-icon *ngIf="item[1]==1" name="volume-high" (click)=changeItemValue(1)></ion-icon>
+      <ion-icon *ngIf="item[1]==0" name="volume-high-outline" (click)=changeItemValue(1)></ion-icon>
     </ion-item>
     <ion-item color="secondary">
       <ion-label>
         <h2>Television without signal</h2>
       </ion-label>
-      <ion-icon name="volume-high-outline"></ion-icon>
+      <ion-icon *ngIf="item[2]==1" name="volume-high" (click)=changeItemValue(2)></ion-icon>
+      <ion-icon *ngIf="item[2]==0" name="volume-high-outline" (click)=changeItemValue(2)></ion-icon>
     </ion-item>
   </ion-list>
 

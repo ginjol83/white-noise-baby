@@ -6,7 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  item:any
+  constructor() {
+    this.item=[]
+    this.resetValues()
+  }
 
-  constructor() {}
+  changeItemValue( pos:number){
+    if (this.item[pos] == 1){
+      this.item[pos] = 0
+    }else{
+      this.resetValues()
+      this.item[pos] = 1
+    }
+  }
 
+  resetValues(){
+    this.item[0]=0
+    this.item[1]=0
+    this.item[2]=0
+  }
 }
