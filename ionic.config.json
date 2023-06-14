@@ -1,0 +1,7 @@
+{
+  "name": "white-noise-baby",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
