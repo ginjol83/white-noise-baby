@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-tab1',
@@ -7,9 +8,15 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
   item:any
+  countdown:any
+  minutes!:number
+  seconds!:number
   constructor() {
-    this.item=[]
+    this.item = []
     this.resetValues()
+    this.countdown = moment({hour:0,minute:10,second:0,millisecond:0});
+    this.minutes = this.countdown.minutes()
+    this.seconds = this.countdown.seconds()
   }
 
   changeItemValue( pos:number){

@@ -1,8 +1,12 @@
+<!--script src="lib/ion-datetime-picker/release/ion-datetime-picker.min.js"></script>
+<link href="lib/ion-datetime-picker/release/ion-datetime-picker.min.css" rel="stylesheet"-->
+
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-title><ion-icon src="../../assets/icon/baby-solid.svg"></ion-icon>
       White Noise Baby
     </ion-title>
+  <ion-icon slot="end" name="options" size="large" style="margin-right: 5%;"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -12,10 +16,20 @@
       <ion-title size="large">White Noise Baby</ion-title>
     </ion-toolbar>
   </ion-header>
-
+  
+  
   <ion-list >
-    <!-- ion-list-header color="secondary"> <h1>Select Sound</h1> </ion-list-header -->
+    <ion-item color="secondary" >
+        <ion-input 
+          label="Duration input in minutes" 
+          type="number" 
+          placeholder="000" 
+          value ={{this.countdown.minutes()}}>
+      </ion-input>
+    </ion-item>
 
+    <!-- ion-list-header color="secondary"> <h1>Select Sound</h1> </ion-list-header -->
+    
     <ion-item color="secondary">
       <ion-label>
         <h2>Hair dryer</h2>
@@ -38,7 +52,16 @@
       <ion-icon *ngIf="item[2]==0" name="volume-high-outline" (click)=changeItemValue(2)></ion-icon>
     </ion-item>
   </ion-list>
-
+  <ion-item color="secondary" >
+    <round-progress 
+      [max]="this.minutes"
+      [current]="10" 
+      style="margin: 0 auto; margin-top: 5%; margin-bottom: 5%;">
+    </round-progress>
+  </ion-item>
+  <ion-item color="secondary" >
+    <h1>{{this.minutes}}:{{this.seconds}}</h1>
+  </ion-item>
   
 
   <!-- app-explore-container name="Tab 1 page"></app-explore-container-->
