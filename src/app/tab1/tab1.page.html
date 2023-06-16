@@ -34,35 +34,42 @@
       <ion-label>
         <h2>Hair dryer</h2>
       </ion-label>
-      <ion-icon *ngIf="item[0]==1" name="volume-high" (click)=changeItemValue(0)></ion-icon>
-      <ion-icon *ngIf="item[0]==0" name="volume-high-outline" (click)=changeItemValue(0)></ion-icon>
+      <ion-icon *ngIf="item[0]==1" name="play" (click)=changeItemValue(0)></ion-icon>
+      <ion-icon *ngIf="item[0]==0" name="play-outline" (click)=changeItemValue(0)></ion-icon>
     </ion-item>
     <ion-item color="secondary">
       <ion-label>
         <h2>Exhaust fans and cooker hoods</h2>
       </ion-label>
-      <ion-icon *ngIf="item[1]==1" name="volume-high" (click)=changeItemValue(1)></ion-icon>
-      <ion-icon *ngIf="item[1]==0" name="volume-high-outline" (click)=changeItemValue(1)></ion-icon>
+      <ion-icon *ngIf="item[1]==1" name="play" (click)=changeItemValue(1)></ion-icon>
+      <ion-icon *ngIf="item[1]==0" name="play-outline" (click)=changeItemValue(1)></ion-icon>
     </ion-item>
     <ion-item color="secondary">
       <ion-label>
         <h2>Television without signal</h2>
       </ion-label>
-      <ion-icon *ngIf="item[2]==1" name="volume-high" (click)=changeItemValue(2)></ion-icon>
-      <ion-icon *ngIf="item[2]==0" name="volume-high-outline" (click)=changeItemValue(2)></ion-icon>
+      <ion-icon *ngIf="item[2]==1" name="play" (click)=changeItemValue(2)></ion-icon>
+      <ion-icon *ngIf="item[2]==0" name="play-outline" (click)=changeItemValue(2)></ion-icon>
     </ion-item>
   </ion-list>
-  <ion-item color="secondary" >
+  <ion-item color="secondary" style="position: relative;" >
     <round-progress 
       [max]="this.minutes"
       [current]="10" 
       style="margin: 0 auto; margin-top: 5%; margin-bottom: 5%;">
     </round-progress>
   </ion-item>
-  <ion-item color="secondary" >
+  <!--ion-item color="secondary" style="position: absolute;">
     <h1>{{this.minutes}}:{{this.seconds}}</h1>
-  </ion-item>
+  </ion-item -->
   
-
+  <ion-item *ngFor="let animal of animales" (click)="reproducir(animal)">
+    <ion-avatar item-start>
+      <img src="{{ animal.imagen }}">
+    </ion-avatar>
+    <h2>{{ animal.nombre }}</h2>
+    <ion-icon *ngIf="animal.reproduciendo" name="pause" item-end></ion-icon>
+    <ion-icon *ngIf="!animal.reproduciendo" name="play" item-end></ion-icon>
+  </ion-item>
   <!-- app-explore-container name="Tab 1 page"></app-explore-container-->
 </ion-content>

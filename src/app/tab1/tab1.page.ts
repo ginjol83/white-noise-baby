@@ -33,4 +33,19 @@ export class Tab1Page {
     this.item[1]=0
     this.item[2]=0
   }
+
+  reproducir (animal: any) {
+    console.log(animal);
+
+    let audio = new Audio();
+
+    audio.src = animal.audio;
+    animal.reproduciendo = true;
+    audio.load();
+    audio.play();
+
+    setTimeout(() => {
+      animal.reproduciendo = false;
+    }, animal.duracion * 1000);
+  }
 }
