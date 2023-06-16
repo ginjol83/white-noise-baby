@@ -35,6 +35,7 @@ export class Tab1Page {
   }
 
   reproducir (animal: any) {
+    // https://ualmtorres.github.io/TutorialAppSonidos/
     console.log(animal);
 
     let audio = new Audio();
