@@ -1,0 +1,33 @@
+    [   
+        {
+            "id":0,
+            "name":"Hair dryer",
+            "src":"../assets/audio/hair_dryer.mp3",
+            "play":0
+        },{
+            "id":1,
+            "name":"Exhaust fans and cooker hoods",
+            "src":"../assets/audio/coocker_hood.mp3",
+            "play":0
+        },{
+            "id":2,
+            "name":"Television without signal",
+            "src":"../assets/audio/tv.mp3",
+            "play":0
+        },{
+            "id":3,
+            "name":"Rain sound",
+            "src":"../assets/audio/rain.mp3",
+            "play":0
+        },{
+            "id":4,
+            "name":"Sea",
+            "src":"../assets/audio/sea.mp3",
+            "play":0
+        },{
+            "id":5,
+            "name":"Fan",
+            "src":"",
+            "play":0
+        }
+    ]

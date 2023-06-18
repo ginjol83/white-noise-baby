@@ -1,52 +1,39 @@
 import { Component } from '@angular/core';
-import * as moment from 'moment';
-
+import db from "./db.json";
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  item:any
-  countdown:any
-  minutes!:number
-  seconds!:number
+  audio = new Audio();
+  sounds = db 
+
   constructor() {
-    this.item = []
     this.resetValues()
-    this.countdown = moment({hour:0,minute:10,second:0,millisecond:0});
-    this.minutes = this.countdown.minutes()
-    this.seconds = this.countdown.seconds()
   }
 
-  changeItemValue( pos:number){
-    if (this.item[pos] == 1){
-      this.item[pos] = 0
+  changeSoundsValue( pos:number){
+    if (this.sounds[pos].play == 1){
+      this.sounds[pos].play = 0
+      this.audio.pause()
     }else{
       this.resetValues()
-      this.item[pos] = 1
+      this.sounds[pos].play = 1
+      this.playAudio(pos)
     }
   }
 
   resetValues(){
-    this.item[0]=0
-    this.item[1]=0
-    this.item[2]=0
+    for(let i of this.sounds){
+      i.play=0
+    }   
   }
 
-  reproducir (animal: any) {
-    // https://ualmtorres.github.io/TutorialAppSonidos/
-    console.log(animal);
-
-    let audio = new Audio();
-
-    audio.src = animal.audio;
-    animal.reproduciendo = true;
-    audio.load();
-    audio.play();
-
-    setTimeout(() => {
-      animal.reproduciendo = false;
-    }, animal.duracion * 1000);
+  playAudio (pos: number) {
+    this.audio.src = this.sounds[pos].src
+    this.audio.load();
+    this.audio.play();
+    this.audio.loop=true;
   }
 }
