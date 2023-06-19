@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import db from "./db.json";
+import { AdsService } from '../services/ads-service.service'; 
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -9,8 +11,10 @@ export class Tab1Page {
   audio = new Audio();
   sounds = db 
 
-  constructor() {
+  constructor(ads : AdsService) {
     this.resetValues()
+    ads.initialize()
+    ads.banner()
   }
 
   changeSoundsValue( pos:number){

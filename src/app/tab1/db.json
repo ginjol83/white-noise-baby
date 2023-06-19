@@ -6,7 +6,7 @@
             "play":0
         },{
             "id":1,
-            "name":"Exhaust fans and cooker hoods",
+            "name":"Cooker hoods",
             "src":"../assets/audio/coocker_hood.mp3",
             "play":0
         },{
@@ -27,7 +27,7 @@
         },{
             "id":5,
             "name":"Fan",
-            "src":"",
+            "src":"../assets/audio/fan.mp3",
             "play":0
         }
     ]

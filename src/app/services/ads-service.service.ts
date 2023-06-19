@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AdMob, AdOptions, BannerAdOptions, BannerAdSize, BannerAdPosition, AdLoadInfo, BannerAdPluginEvents, AdMobBannerSize, InterstitialAdPluginEvents } from '@capacitor-community/admob';
 
-
+//ca-app-pub-9669223673392187~5804662611
 @Injectable({
   providedIn: 'root'
 })
-export class AdsServiceService {
+export class AdsService {
 
   constructor() { }
 
@@ -20,7 +20,7 @@ export class AdsServiceService {
     });
   
     const options: AdOptions = {
-      adId: 'ca-app-pub-9669223673392187/7675824744',
+      adId: 'ca-app-pub-9669223673392187/8126168651',
       // isTesting: true
       // npa: true
     };
@@ -38,7 +38,7 @@ export class AdsServiceService {
     });
   
     const options: BannerAdOptions = {
-      adId: 'ca-app-pub-9669223673392187/7607304300',
+      adId: 'ca-app-pub-9669223673392187/8126168651',
       adSize: BannerAdSize.BANNER,
       position: BannerAdPosition.BOTTOM_CENTER,
       margin: 0,
