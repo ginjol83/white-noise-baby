@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">white-noise-baby</string>
+    <string name="title_activity_main">white-noise-baby</string>
+    <string name="package_name">white.noise.baby</string>
+    <string name="custom_url_scheme">white.noise.baby</string>
+</resources>
